@@ -35,7 +35,12 @@ public class WordTrainer {
     }
 
     public boolean checkWord(String word) {
-        return curWord != null && curWord.getWord().equalsIgnoreCase(word);
+        boolean r= curWord != null && curWord.getWord().equalsIgnoreCase(word);
+        this.allTrys++;
+        if(r){
+            this.correctTrys++;
+        }
+        return r;
     }
 
     public WordEntry getCurWord() {
