@@ -14,9 +14,13 @@ public class SaveLoad {
                 writer.newLine();
             }
             // Speichern der Statistik
-            writer.write("RichtigeVersuche:" + wordTrainer.getCorrectTrys());
+            /*writer.write("RichtigeVersuche:" + wordTrainer.getCorrectTrys());
             writer.newLine();
             writer.write("GesamtVersuche:" + wordTrainer.getAllTrys());
+            writer.newLine();*/
+            writer.write("RichtigeVersuche:" +0);
+            writer.newLine();
+            writer.write("GesamtVersuche:" + 0);
             writer.newLine();
         }
     }
