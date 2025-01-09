@@ -15,10 +15,12 @@ public class WordList {
         this.wordList.add(word);
     }
 
+    //TODO Entry soll nach wort gesucht werden und nicht nach index
     public WordEntry deleteWord(int i){
         return this.wordList.remove(i);
     }
 
+    //TODO Entry soll nach wort gesucht werden und nicht nach index
     public WordEntry getWord(int i){
         return this.wordList.get(i);
     }
@@ -32,4 +34,7 @@ public class WordList {
         return this.wordList.size();
     }
 
+    public ArrayList<WordEntry> getWordEntries() {
+        return wordList;
+    }
 }
