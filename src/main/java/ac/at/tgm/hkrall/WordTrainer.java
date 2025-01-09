@@ -4,8 +4,8 @@ public class WordTrainer {
 
     private WordList wordlist;
 
-    //TODO evtl curWord statt string zu einem WordEntry machen
-    private String curWord="invalid";
+
+    private WordEntry curWord;
 
 
     int correctTrys=0;
@@ -16,18 +16,29 @@ public class WordTrainer {
     }
 
 
-    public WordEntry getRandomWord(){
+  /*  public WordEntry getRandomWord(){
         WordEntry r= this.wordlist.getWord((int) (Math.random() * (this.wordlist.getLength())));
         this.curWord=r.getWord();
         return r;
+    }*/
+
+    public WordEntry getRandomWord() {
+        if (this.wordlist.getLength() == 0) {
+            this.curWord = null; // Kein Eintrag vorhanden
+            return null;
+        }
+
+        WordEntry r = this.wordlist.getWordEntries()
+                .get((int) (Math.random() * this.wordlist.getLength()));
+        this.curWord = r; // Speichert das gesamte WordEntry
+        return r;
     }
 
-
-    public boolean checkWord(String word){
-        return this.curWord.equalsIgnoreCase(word);
+    public boolean checkWord(String word) {
+        return curWord != null && curWord.getWord().equalsIgnoreCase(word);
     }
 
-    public String getCurWord() {
+    public WordEntry getCurWord() {
         return curWord;
     }
 

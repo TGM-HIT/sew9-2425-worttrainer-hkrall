@@ -15,14 +15,23 @@ public class WordList {
         this.wordList.add(word);
     }
 
-    //TODO Entry soll nach wort gesucht werden und nicht nach index
-    public WordEntry deleteWord(int i){
-        return this.wordList.remove(i);
+    public WordEntry deleteWord(String word) {
+        for (WordEntry entry : wordList) {
+            if (entry.getWord().equalsIgnoreCase(word)) {
+                wordList.remove(entry);
+                return entry;
+            }
+        }
+        return null; // Falls das Wort nicht gefunden wurde
     }
 
-    //TODO Entry soll nach wort gesucht werden und nicht nach index
-    public WordEntry getWord(int i){
-        return this.wordList.get(i);
+    public WordEntry getWord(String word) {
+        for (WordEntry entry : wordList) {
+            if (entry.getWord().equalsIgnoreCase(word)) {
+                return entry;
+            }
+        }
+        return null; // Falls das Wort nicht gefunden wurde
     }
 
     @Override

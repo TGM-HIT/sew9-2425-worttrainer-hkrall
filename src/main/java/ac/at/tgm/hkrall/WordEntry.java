@@ -5,6 +5,7 @@ public class WordEntry {
     private String word;
     private String url;
 
+    //TODO exception werfen und nicht ein neues wort speichern
     public WordEntry(String word, String url) {
         if(this.checkUrl(url)){
             this.word = word;
